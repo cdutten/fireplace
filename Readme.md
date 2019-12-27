@@ -2,21 +2,25 @@
 
 ![](img/logo.png)
 
-## **Problema a solucionar:**
+## The problem:
   
-Ayudar a escoger el lugar de residencia/alojamiento, del usuario, ponderando sus posibilidades de transporte.
+Is hard to choose a place to live. You need to have a lot of variables on mind.
+- The public transport?
+- A parking lot for my car?
+- Is too far for my couple place?
+- How much time I have to travel to get to my workplace?
+- Is the best place too expensive?
 
-_Ejemplo:_
+## How the app can help?
 
-Soy un turista y quiero visitar el cementerio de La Chacarita. Cual seria la mejor zona para buscar hotel en la que tenga transporte publico para llegar.
+Fireplace help you thinking in all that things.
 
+You need to tell your needs and the app is going to create a heatmap showing you the places that can fit your needs.
 
-## **Cómo se usa?**
+## I like the idea. Can I help?
 
-El primer paso sería elegir una dirección de origen y múltiples o un destino.
-
-Se pueden usar filtros para el tipo de transporte de preferencia, por ejemplo bici, tren, subte
-
-Se presentara una pantalla con una lista de zonas recomendadas. Esta podra ser alternada por un mapa el cual mostrara cuales son las zonas las cuales cuentan con mejor accesibilidad a tu destino.
-
-Tambien teniendo en cuenta la distancia te dara recomendaciones mas adecuadas, porque si tu destino queda a 12 km no seria lo normal hacerlos mediante ecobici.
+Yes. 
+- Helping me developing new features
+- Testing the app and giving feedback
+- Helping with the design
+- Saying thanks with a Star :grimacing:
