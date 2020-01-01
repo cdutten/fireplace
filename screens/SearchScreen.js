@@ -12,7 +12,7 @@ const SearchScreen = props => {
                 <Button
                     title={"Search"}
                     color={'red'}
-                    onPress={() => (props.searchFinished())}/>
+                    onPress={() => props.navigation.navigate('Map')}/>
             </View>
         </View>
     );

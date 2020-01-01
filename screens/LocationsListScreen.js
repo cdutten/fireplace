@@ -1,15 +1,25 @@
-import React, {useState} from 'react';
-import {View, FlatList, StyleSheet, Text, SafeAreaView} from 'react-native';
+import React from 'react';
+import {View, FlatList, StyleSheet, Text} from 'react-native';
 import Item from "../components/Item";
+import {useSelector} from "react-redux";
 
 
 const LocationsListScreen = props => {
-    return (
+    const locations = useSelector(state => state.locations);
+    console.log(locations.data.length);
+    if (locations.data.length === undefined) {
+        return (
+        <View style={styles.screen}>
+            <Text> Best Matches </Text>
+            <Text> Empty result </Text>
+        </View>);
+    }
 
+    return (
         <View style={styles.screen}>
             <Text> Best Matches </Text>
             <FlatList
-                data={props.locations.stations}
+                data={locations.data}
                 renderItem={({item}) => <Item data={item}/>}
                 keyExtractor={item => item.id}
             />

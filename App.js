@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
-import {StyleSheet} from 'react-native';
 import {AppLoading} from "expo";
-import SearchScreen from "./screens/SearchScreen";
-import LocationsListScreen from "./screens/LocationsListScreen";
+import MainNavigator from "./navigation/MainNavigator";
+import {createStore, combineReducers} from "redux";
+import locationsReducer from "./store/reducers/locations";
+import { Provider } from 'react-redux'
 
+const rootReducer = combineReducers({
+    locations: locationsReducer
+});
+
+const store = createStore(rootReducer);
 
 export default function App() {
     const [dataLoaded, setDataLoaded] = useState(false);
-    const [isSearching, setIsSearching] = useState(true);
     const [data, setData] = useState([]);
 
     const fetchData = () => {
@@ -17,7 +22,6 @@ export default function App() {
                 responseJson.stations.sort((a, b) => {
                     let scoreA = a.score,
                         scoreB = b.score;
-                    // Compare the 2 dates
                     if(scoreA < scoreB) return -1;
                     if(scoreA > scoreB) return 1;
                     return 0;
@@ -33,35 +37,8 @@ export default function App() {
                            onError={(err) => console.log(err)}
         />;
     }
-
-    if (isSearching) {
-        return (<SearchScreen
-            searchFinished={() => setIsSearching(false)}
-        />);
-    }
-
-    console.log(data);
-
-    return (<LocationsListScreen locations={data}/>);
+    return (
+    <Provider store={store}>
+        <MainNavigator/>
+    </Provider>);
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    searchInput: {
-        borderBottomColor: 'red',
-        borderBottomWidth: 2,
-        width: 115
-    },
-    searchContainer: {
-        flexDirection: 'row',
-        width: '50%',
-        height: 75,
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    }
-});
