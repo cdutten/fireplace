@@ -1,4 +1,4 @@
-# Fireplace
+# Fireplace-mobile
 
 ![](img/logo.png)
 
@@ -24,3 +24,6 @@ Yes.
 - Testing the app and giving feedback
 - Helping with the design
 - Saying thanks with a Star :grimacing:
+
+## Status
+Stand by, I am developing the web version first.
